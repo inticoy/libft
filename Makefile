@@ -6,7 +6,7 @@
 #    By: gyoon <gyoon@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/25 16:44:08 by gyoon             #+#    #+#              #
-#    Updated: 2023/01/25 22:15:26 by gyoon            ###   ########.fr        #
+#    Updated: 2023/03/21 17:06:17 by inticoy          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,20 +43,20 @@ OBJS = $(SRCS:.c=.o)
 all : $(NAME)
 
 $(NAME) : $(OBJS)
-	ar rc $(NAME) $(OBJS)
+	@ar rc $(NAME) $(OBJS)
 
 %.o : %.c
-	$(CC) $(CFLAGS) -c $< -o $@ -I include
+	@$(CC) $(CFLAGS) -c $< -o $@ -I include
 
 clean :
-	$(RM) $(OBJS)
+	@$(RM) $(OBJS)
 
 fclean :
-	make clean
-	$(RM) $(NAME)
+	@make clean
+	@$(RM) $(NAME)
 
 re :
-	make fclean
-	make all
+	@make fclean
+	@make all
 
 .PHONY : all clean fclean re .c.o
